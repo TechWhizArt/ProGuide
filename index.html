@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Login</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+<body class = "indexpage">
+    <div class="login-container">
+        <h2>College Login</h2>
+        <form action="/login" method="post" id = "loginForm">
+            <input class = "enterbox" type="text" name="username" placeholder="Username" required>
+            <input class = "enterbox" type="password" name="password" placeholder="Password" required >
+            <input href = "data.html" type="submit" value="Login" >
+            <!-- <a href="target-page.html" class="submit-button">Login</a> -->
+
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const password = form.password.value; // Get the entered password
+
+            if (password === '1234') {
+                // Redirect to the desired page if the password is correct
+                window.location.href = 'list.html';
+            } else {
+                // Show an error message if the password is incorrect
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

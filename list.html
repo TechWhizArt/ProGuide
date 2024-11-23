@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>List of Languages</title>
+</head>
+<header>ProGuide</header>
+<body class = "languagepage">
+    
+    <h1 class = "header"><center>Languages</center></h1>
+    <div class = "gridd">
+        <a href="python.html" class = "box">Python</a>
+        <a href="Java.html" class = "box">Java</a>
+        <a href="python.html" class = "box">HTML, CSS</a>
+        <a href="python.html" class = "box">XML, Jetpack Compose</a>
+        <a href="python.html" class = "box">Javascript</a>
+        <a href="python.html" class = "box">Flutter</a>
+        <a href="python.html" class = "box">C, C++</a>
+        <a href="python.html" class = "box">Python</a>
+        <a href="Java.html" class = "box">Java</a>
+
+
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all icons with the class 'box'
+            const icons = document.querySelectorAll('.box');
+    
+            icons.forEach(icon => {
+                // Add mousedown event to change color on click
+                icon.addEventListener('mousedown', () => {
+                    icon.style.backgroundColor = 'darkcyan'; // Change background color
+                    icon.style.color = 'white'; // Optional: change text color
+                });
+    
+                // Add mouseup event to navigate on release
+                icon.addEventListener('mouseup', () => {
+                    window.location.href = icon.href; // Navigate to the linked page
+                });
+    
+                // For touch devices, handle touchstart and touchend
+                icon.addEventListener('touchstart', () => {
+                    icon.style.backgroundColor = 'darkcyan'; // Change background color
+                    icon.style.color = 'white'; // Optional: change text color
+                });
+    
+                icon.addEventListener('touchend', () => {
+                    window.location.href = icon.href; // Navigate to the linked page
+                });
+            });
+        });
+    </script>
+    <footer>
+        <p>We'd love to hear your thoughts!</p>
+        <p><a href="mailto:niharikastar27@gmail.com">Leave us a review</a></p>
+    </footer>
+</body>
+</html>
