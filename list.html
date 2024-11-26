@@ -6,22 +6,19 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>List of Languages</title>
 </head>
-<header>ProGuide</header>
+<header style="background-color: darkcyan; color:white"><center>ProGuide</center></header>
 <body class = "languagepage">
     
-    <h1 class = "header"><center>Languages</center></h1>
+    <h1 class = "header" ><center>Languages</center></h1>
     <div class = "gridd">
         <a href="python.html" class = "box">Python</a>
         <a href="Java.html" class = "box">Java</a>
-        <a href="python.html" class = "box">HTML, CSS</a>
-        <a href="python.html" class = "box">XML, Jetpack Compose</a>
-        <a href="python.html" class = "box">Javascript</a>
-        <a href="python.html" class = "box">Flutter</a>
-        <a href="python.html" class = "box">C, C++</a>
-        <a href="python.html" class = "box">Python</a>
-        <a href="Java.html" class = "box">Java</a>
-
-
+        <a href="htmlcss.html" class = "box">HTML, CSS</a>
+        <a href="jetpack.html" class = "box">XML, Jetpack Compose</a>
+        <a href="javascript.html" class = "box">Javascript</a>
+        <a href="ccpp.html" class = "box">C, C++</a>
+        <a href="kotlin.html" class = "box">Kotlin</a>
+        <a href="Projects.html" class = "box">Projects</a>
 
     </div>
     <script>
@@ -35,20 +32,18 @@
                     icon.style.backgroundColor = 'darkcyan'; // Change background color
                     icon.style.color = 'white'; // Optional: change text color
                 });
-    
                 // Add mouseup event to navigate on release
                 icon.addEventListener('mouseup', () => {
                     window.location.href = icon.href; // Navigate to the linked page
                 });
-    
                 // For touch devices, handle touchstart and touchend
                 icon.addEventListener('touchstart', () => {
                     icon.style.backgroundColor = 'darkcyan'; // Change background color
                     icon.style.color = 'white'; // Optional: change text color
                 });
-    
                 icon.addEventListener('touchend', () => {
                     window.location.href = icon.href; // Navigate to the linked page
+                    icon.style.backgroundColor = 'cadetblue';
                 });
             });
         });
