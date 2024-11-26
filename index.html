@@ -1,42 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Login</title>
-    
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(200deg, #070707, #0a0a0a, #111011, #1a1a1b);
+      background-size: 500% 500%;
+      animation: backgroundAnimation 4s infinite alternate;
+    }
+    div {
+      transition: transform 0.3s ease-in-out;
+    }
+    div:hover {
+      transform: scale(1.1); 
+    }
+    @keyframes backgroundAnimation {
+      25% {
+        background-position: 100% 100%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+    .bubble-login {
+      width: 90%;
+      max-width: 400px;
+      padding: 2rem;
+      background: rgba(4, 172, 250, 0.2);
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(10, 100, 200000, 200000000);
+      text-align: center;
+      backdrop-filter: blur(50px);
+    }
+    .bubble-login h1 {
+      font-size: 24px;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+    .bubble-login input {
+      width: 80%;
+      padding: 15px;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      outline: none;
+      transition: transform 0.2s ease-in-out;
+    }
+    .bubble-login input::placeholder {
+      color: #666;
+    }
+    .bubble-login input:focus {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    .bubble-login button {
+      padding: 15px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ac6898, #253042);
+      color: rgb(236, 164, 164);
+      cursor: pointer;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    }
+    .bubble-login button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: 600px) {
+      .bubble-login {
+        width: 95%;
+        padding: 1.5rem;
+      }
+      .bubble-login input {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
-<body class = "indexpage">
-    <div class="login-container">
-        <h2>College Login</h2>
-        <form action="/login" method="post" id = "loginForm">
-            <input class = "enterbox" type="text" name="username" placeholder="Username" required>
-            <input class = "enterbox" type="password" name="password" placeholder="Password" required >
-            <input href = "data.html" type="submit" value="Login" >
-            <!-- <a href="target-page.html" class="submit-button">Login</a> -->
+<body>
+  <div class="bubble-login">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="text" placeholder="Username" required id="username">
+      <input type="password" placeholder="Password" required id="password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script>
+    const loginForm = document.getElementById('loginForm');
 
-        </form>
-    </div>
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
 
-    <script>
-        const form = document.getElementById('loginForm');
-        const errorMessage = document.getElementById('error-message');
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            const password = form.password.value; // Get the entered password
-
-            if (password === '1234') {
-                // Redirect to the desired page if the password is correct
-                window.location.href = 'list.html';
-            } else {
-                // Show an error message if the password is incorrect
-                errorMessage.style.display = 'block';
-            }
-        });
-    </script>
+      if (password === '1234') {
+        // Redirect to list.html if the password is correct
+        window.location.href = 'list.html';
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    });
+  </script>
 </body>
 </html>
