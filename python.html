@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Python</title>
+</head>
+<body class = bodyofpagethree>
+    <h1 class="header"><center>Python</center></h1>
+    <h4 class="headings">Overview</h4>
+    <div class="overviewcontent">
+        Python is a versatile, high-level programming language known for its simplicity and readability. It supports multiple paradigms, including procedural, object-oriented, and functional programming. Widely used in web development, data analysis, artificial intelligence, and automation, Python features an extensive standard library and a vibrant community, making it beginner-friendly and highly productive.
+        <br>
+        <textarea class="samplecode" readonly style="height:260px">
+    print("Hello, World!")
+        </textarea>
+        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+    </div>
+    <br>
+    <br>
+    <div class = "threecolumn">
+        <div class = "bookinfo material">        <!--this is a table-->
+            <table>
+                <div class="row1">
+                <th class="col1">
+                    Books
+                </th>
+                <th class="col2">
+                    Author
+                </th>
+                <th class="col3">
+                    Info
+                </th>
+            </div>
+            <div class="row2">
+                <tr>
+                    <td class="col1">
+                        Python Crash Course 3ed
+                    </td>
+                    <td class="col2">
+                        Eric Matthes
+                    </td>
+                    <td class="col3">
+                        <a href = "https://www.amazon.in/Python-Crash-Course-Eric-Matthes/dp/1718502702">Buy Now</a>
+                    </td>
+                </tr>
+            </div>
+            <div class="row3">
+
+                <tr>
+                    <td>
+                        Python Programming: An Introduction to Computer Science
+                    </td>
+                    <td>
+                        John M. Zelle
+                    </td>
+                    <td>
+                        <a href="https://www.amazon.co.uk/Programming-Introduction-Computer-Science-Revised/dp/1590282752?crid=LFLW1ZVHJAI9&keywords=python+programming+an+introduction+to+computer+science&qid=1706732735&sprefix=python+programm,aps,84&sr=8-1&linkCode=sl1&tag=gilesstore-21&linkId=cb088de02ee14b2c57b11f00c73bd3dd&language=en_GB&ref_=as_li_ss_tl">
+                            Buy here
+                        </a>
+                    </td>
+                </tr>
+            </div>
+
+            </table>
+        </div>
+        <div class= "other material">
+            
+                <head><h4>Websites</h4></head>
+                
+                <a href = "https://www.geeksforgeeks.org/python-programming-language-tutorial/">
+                    GeeksforGeeks
+                </a>
+                <br>
+                <a href = "https://www.tutorialspoint.com/python/index.htm">
+                    Tutorialspoint
+                </a>
+                <br>
+                <a href="https://www.w3schools.com/python/">
+                    W3Schools
+                </a>
+            
+            
+            
+        </div>
+        <div class="courses material">
+            <head><h4>Youtube Videos related to topic...</h4></head>
+            <a href="https://youtu.be/t2_Q2BRzeEE?si=FGXTYsIa5Xa9W3Ia">
+                Python Language Full Course 2024 
+            </a>
+            <br>
+            <a href="https://youtu.be/7wnove7K-ZQ?si=bxEtwCGuQsCISVu2">
+                Python for Beginners
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>We'd love to hear your thoughts!</p>
+        <p><a href="mailto:niharikastar27@gmail.com">Leave us a review</a></p>
+    </footer>
+     <!-- to copy the text to clipboard -->
+     <script>
+        function copyToClipboard() {
+            // Get the non-editable element
+            const textbox = document.getElementsByClassName("samplecode")[0];
+
+            // Create a temporary input element to copy content
+            const tempInput = document.createElement("textarea");
+            tempInput.value = textbox.value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text to the clipboard
+            document.execCommand("copy");
+
+            // Remove the temporary element
+            document.body.removeChild(tempInput);
+
+            alert("Text copied to clipboard!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>HTML and CSS</title>
+</head>
+<body class = bodyofpagethree>
+    <h1 class="header"><center>HTML and CSS</center></h1>
+    <h4 class="headings">Overview</h4>
+    <div class="overviewcontent">
+        HTML (HyperText Markup Language) is the standard language for creating web pages. It structures content using elements and tags, enabling text, images, links, and multimedia to be displayed in browsers.
+        <br>
+
+        CSS (Cascading Style Sheets) is used to style and layout web pages. It controls the presentation of HTML elements, including colors, fonts, spacing, and positioning, enhancing the visual appeal of websites.
+        <br>
+        <textarea class="samplecode" readonly style="height:400px ">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Hello, World!</title>
+            <style>
+                    /* This CSS will style the body and add a background color */
+            body {
+                    background-color: lightblue;
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+            }
+
+            </style>
+    </head>
+    <body>
+            <h1>Hello, World!</h1>
+    </body>
+    </html>
+
+        </textarea>
+        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+
+    </div>
+    <br>
+    <br>
+    <div class = "threecolumn">
+        <div class = "bookinfo material">        <!--this is a table-->
+            <table>
+                <div class="row1">
+                <th class="col1">
+                    Books
+                </th>
+                <th class="col2">
+                    Author
+                </th>
+                <th class="col3">
+                    Info
+                </th>
+            </div>
+            <div class="row2">
+                <tr>
+                    <td>
+                        HTML and CSS: Design and Build Website
+                    </td>
+                    <td>
+                        Jon Duckett
+                    </td>
+                    <td>
+                        <a href = "https://www.amazon.in/HTML-CSS-Design-Build-Websites/dp/1118008189/ref=sr_1_2?crid=3APO6A4M1SV5O&dib=eyJ2IjoiMSJ9.PovIvvciPgUzRc0UsCIgQFOcbACT79VjIX6Fn28NShrX9ehdU_r4SEQ2FEJPOdAa3ESG5HxdzTAso5bqCoVBui4lLh_2_WsElDhjIYSCwEaaopnWYHGBBZuNm3GO1mVbXD7jgNcwCE3-k98Ofb9BoFqBlDsSIBOUQITPOZwcuzQ66hAZpDu3_4FA1AC9w55dY0quZj8ARL4CFd4Zc7Kpk-JXs8ipmcXi0KUDU5VP0q4.FDprSsCbTgBgBQAWlJoDNVHMKZyajQXZjQuvFX28OEA&dib_tag=se&keywords=john+duckett&qid=1732630456&s=books&sprefix=john+du%2Cstripbooks%2C233&sr=1-2">Buy here</a>
+                    </td>
+                </tr>
+            </div>
+            <div class="row3">
+
+                <tr>
+                    <td>
+    
+                    </td>
+                    <td>
+    
+                    </td>
+                    <td>
+    
+                    </td>
+                </tr>
+            </div>
+
+            </table>
+        </div>
+        <div class= "other material">
+            
+                <head><h4>Websites</h4></head>
+                
+                <a href = "https://www.w3schools.com/html/html_css.asp">
+                    W3Schools
+                </a>
+            
+            
+            
+        </div>
+        <div class="courses material">
+            <head><h4>Youtube Videos related to topic...</h4></head>
+            <a href="https://youtu.be/qz0aGYrrlhU?si=FFWugxoVoZ_ckkNe">
+                Code with Mosh
+            </a>
+            <br>
+            <a href="https://youtu.be/6mbwJ2xhgzM?si=8wJj22AWJoxLqjoD">
+                Code With Harry
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>We'd love to hear your thoughts!</p>
+        <p><a href="mailto:niharikastar27@gmail.com">Leave us a review</a></p>
+    </footer>
+     <!-- to copy the text to clipboard -->
+     <script>
+        function copyToClipboard() {
+            // Get the non-editable element
+            const textbox = document.getElementsByClassName("samplecode")[0];
+
+            // Create a temporary input element to copy content
+            const tempInput = document.createElement("textarea");
+            tempInput.value = textbox.value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text to the clipboard
+            document.execCommand("copy");
+
+            // Remove the temporary element
+            document.body.removeChild(tempInput);
+
+            alert("Text copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
+

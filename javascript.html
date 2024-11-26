@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Java Script</title>
+</head>
+<body class = bodyofpagethree>
+    <h1 class="header"><center>Java Script</center></h1>
+    <h4 class="headings">Overview</h4>
+    <div class="overviewcontent">
+
+        JavaScript is a dynamic, high-level programming language used for web development. It enables interactive elements, manipulation of web page content, and supports event-driven, asynchronous, and functional programming paradigms.
+        <br>
+        <textarea class="samplecode" readonly style="height:260px">
+import java.lang.*;
+
+public class Main{
+
+    public static void main (String[] args) {
+
+        System.out.println("Hello there! This is a sample code");
+
+    }
+
+}
+        </textarea>
+        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+    </div>
+    <br>
+    <br>
+    <div class = "threecolumn">
+        <div class = "bookinfo material">        <!--this is a table-->
+            <table>
+                <div class="row1">
+                <th class="col1">
+                    Books
+                </th>
+                <th class="col2">
+                    Author
+                </th>
+                <th class="col3">
+                    Info
+                </th>
+            </div>
+            <div class="row2">
+                <tr>
+                    <td class="col1">
+                        JavaScript and jQuery: Interactive Front-End Web Development 
+                    </td>
+                    <td class="col2">
+                        Jon Duckett
+                    </td>
+                    <td class="col3">
+                        <a href = "https://www.amazon.in/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=pd_sbs_d_sccl_3_6/261-7732439-8318228?pd_rd_w=YUlTq&content-id=amzn1.sym.6d6d3d39-5982-495f-839b-479a2134f3e8&pf_rd_p=6d6d3d39-5982-495f-839b-479a2134f3e8&pf_rd_r=2KB6AYTTPA63P6YY2HKQ&pd_rd_wg=7vYDv&pd_rd_r=93d308fd-632c-4977-894f-34d9fef50eb5&pd_rd_i=1118531647&psc=1">Buy here</a>
+                    </td>
+                </tr>
+            </div>
+            <div class="row3">
+
+                <tr>
+                    <td>
+    
+                    </td>
+                    <td>
+    
+                    </td>
+                    <td>
+    
+                    </td>
+                </tr>
+            </div>
+
+            </table>
+        </div>
+        <div class= "other material">
+            
+                <head><h4>Websites</h4></head>
+                
+                <a href = "https://www.w3schools.com/js/">
+                    GeeksforGeeks
+                </a>
+                <br>
+                <a href="https://javascript.info/">
+                    The Modern JS Tutorial
+                </a>
+            
+            
+            
+        </div>
+        <div class="courses material">
+            <head><h4>Youtube Videos related to topic...</h4></head>
+            <a href="https://youtu.be/ER9SspLe4Hg?si=XmpU6aj9ZEeKWR_d">
+                Code with Harry
+            </a>
+            <br>
+            <a href="https://youtu.be/EerdGm-ehJQ?si=CYe0uHJlZPiRvIu_">
+                Super Simple Dev
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>We'd love to hear your thoughts!</p>
+        <p><a href="mailto:niharikastar27@gmail.com">Leave us a review</a></p>
+    </footer>
+     <!-- to copy the text to clipboard -->
+     <script>
+        function copyToClipboard() {
+            // Get the non-editable element
+            const textbox = document.getElementsByClassName("samplecode")[0];
+
+            // Create a temporary input element to copy content
+            const tempInput = document.createElement("textarea");
+            tempInput.value = textbox.value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text to the clipboard
+            document.execCommand("copy");
+
+            // Remove the temporary element
+            document.body.removeChild(tempInput);
+
+            alert("Text copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
