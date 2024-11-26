@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" />
-
+    <style>
+        .samplecode{
+            justify-content: left;
+        }
+    </style>
     <title>Java</title>
 </head>
 <body class = bodyofpagethree>
     <h1 class="header"><center>Java</center></h1>
     <h4 class="headings">Overview</h4>
     <div class="overviewcontent">
+        <div>
+            Java is a versatile, object-oriented programming language known for its platform independence, achieved through the Java Virtual Machine (JVM). It emphasizes simplicity, security, and performance, making it suitable for diverse applications like web, desktop, and mobile development. With features like garbage collection and robust libraries, Java remains widely used and reliable.
 
-        Java is a versatile, object-oriented programming language known for its platform independence, achieved through the Java Virtual Machine (JVM). It emphasizes simplicity, security, and performance, making it suitable for diverse applications like web, desktop, and mobile development. With features like garbage collection and robust libraries, Java remains widely used and reliable.
+        </div>
+        <br>
+        <textarea class="samplecode" readonly style="height:260px">
+import java.lang.*;
+
+public class Main{
+    public static void main (String[] args) {
+        System.out.println("Hello there! This is a sample code");
+    }
+}
+        </textarea>
+        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
 
     </div>
     <br>
@@ -34,13 +51,13 @@
             <div class="row2">
                 <tr>
                     <td class="col1">
-                        Java Guide
+                        JAVA : A BEGINNER’S GUIDE
                     </td>
                     <td class="col2">
                         Herbert Schiltz
                     </td>
                     <td class="col3">
-                        <a href = "amazon.com">Info</a>
+                        <a href = "https://www.amazon.in/JAVA-BEGINNERS-GUIDE-Herbert-Schildt/dp/9355323344/ref=sr_1_4?crid=2JE6EQ9POLYKH&dib=eyJ2IjoiMSJ9.T7Y3iUeQu81SaUIRDfm0T3pEffMJigRko3iKNJcLE1pV1pjQfk31YIN3gUa_rh1uwi6Cdqb2CmoaNr8XNafwTJGzLhjN-ZX9Ep7wyv28q3vIlbjFzpp-zJXTSLEpxP2JklyE_xfYDVgkqhoTIAk6-xFmQtyVWleX6-W4XusUYHbLAbyZimrc3Ybj-H0qkhsXutBwCANixkXciK9PrHHpimpXCE6sLEO9l2-L8SXSfAc.9UdQ7SsvCBWw8twosCAKuWT40qFGlNKmnbvB5QgSa6s&dib_tag=se&keywords=java+guide&qid=1732625613&s=books&sprefix=java+gui%2Cstripbooks%2C253&sr=1-4">Buy here</a>
                     </td>
                 </tr>
             </div>
@@ -48,13 +65,15 @@
 
                 <tr>
                     <td>
-    
+                        Head First Java
                     </td>
                     <td>
-    
+                        Kathy Sierra & Bert Bates
                     </td>
                     <td>
-    
+                        <a href="https://www.amazon.in/Head-First-Java-Brain-Friendly-Guide/dp/8173666024">
+                            Buy here
+                        </a>
                     </td>
                 </tr>
             </div>
@@ -65,8 +84,12 @@
             
                 <head><h4>Websites</h4></head>
                 
-                <a href = "">
-                    GeeksforGeeks
+                <a href = "https://www.javatpoint.com/java-tutorial">
+                    Javatpoint
+                </a>
+                <br>
+                <a href="https://www.w3schools.com/java/">
+                    W3Schools
                 </a>
             
             
@@ -74,12 +97,12 @@
         </div>
         <div class="courses material">
             <head><h4>Youtube Videos related to topic...</h4></head>
-            <a href="">
-                Apna College
+            <a href="https://youtu.be/eIrMbAQSU34?si=5HZDDY7e2zGJrWaE">
+                Programming with Mosh
             </a>
             <br>
-            <a href="">
-                Code With Harry
+            <a href="https://youtu.be/UmnCZ7-9yDY?si=3fAdjD-LQUOxNVel">
+                Apna College
             </a>
         </div>
     </div>
@@ -87,5 +110,29 @@
         <p>We'd love to hear your thoughts!</p>
         <p><a href="mailto:niharikastar27@gmail.com">Leave us a review</a></p>
     </footer>
+
+
+    <!-- to copy the text to clipboard -->
+    <script>
+        function copyToClipboard() {
+            // Get the non-editable element
+            const textbox = document.getElementsByClassName("samplecode")[0];
+
+            // Create a temporary input element to copy content
+            const tempInput = document.createElement("textarea");
+            tempInput.value = textbox.value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text to the clipboard
+            document.execCommand("copy");
+
+            // Remove the temporary element
+            document.body.removeChild(tempInput);
+
+            alert("Text copied to clipboard!");
+        }
+    </script>
 </body>
 </html>
