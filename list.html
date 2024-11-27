@@ -44,8 +44,9 @@
                     icon.style.color = 'white'; // Optional: change text color
                 });
                 icon.addEventListener('touchend', () => {
-                    window.location.href = icon.href; // Navigate to the linked page
                     icon.style.backgroundColor = 'cadetblue';
+                    window.location.href = icon.href; // Navigate to the linked page
+                    
                 });
             });
         });
