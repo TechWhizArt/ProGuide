@@ -8,27 +8,35 @@
     <title>C, C++</title>
 </head>
 <body class = bodyofpagethree>
+    <header>
+        <h3>ProGuide</h3>
+    </header>
     <h1 class="header"><center>C, C++</center></h1>
     <h4 class="headings">Overview</h4>
     <div class="overviewcontent">
         C is a low-level, procedural programming language focused on performance and system programming. C++ extends C with object-oriented features, supporting classes, inheritance, and polymorphism, useful for complex software development.
-        <br><br>
+        <br>
+        <textarea class="samplecode xml-code" readonly style="height:260px">
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+</textarea>
+        <button onclick="copyToClipboard('xml-code')" class="copybutton">Copy</button>
+        <br>
         Note: It is recommended to borrow a C language book from the school library and utilize online resources for learning. However, if you still prefer to purchase one, here is a suitable option for you.
         <br>
-        <textarea class="samplecode" readonly style="height:260px">
-import java.lang.*;
+        <textarea class="samplecode compose-code" readonly style="height:260px">
+#include <iostream>
 
-public class Main{
-
-    public static void main (String[] args) {
-
-        System.out.println("Hello there! This is a sample code");
-
-    }
-
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
 }
-        </textarea>
-        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+</textarea>
+        <button onclick="copyToClipboard('compose-code')" class="copybutton">Copy</button>
 
     </div>
     <br>
@@ -137,9 +145,9 @@ public class Main{
     </footer>
      <!-- to copy the text to clipboard -->
      <script>
-        function copyToClipboard() {
+        function copyToClipboard(className) {
             // Get the non-editable element
-            const textbox = document.getElementsByClassName("samplecode")[0];
+            const textbox = document.getElementsByClassName(className)[0];
 
             // Create a temporary input element to copy content
             const tempInput = document.createElement("textarea");
