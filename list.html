@@ -36,6 +36,7 @@
                 });
                 // Add mouseup event to navigate on release
                 icon.addEventListener('mouseup', () => {
+                    icon.style.backgroundColor = 'cadetblue';
                     window.location.href = icon.href; // Navigate to the linked page
                 });
                 // For touch devices, handle touchstart and touchend
