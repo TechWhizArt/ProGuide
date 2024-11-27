@@ -13,82 +13,93 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(200deg, #070707, #0a0a0a, #111011, #1a1a1b);
-      background-size: 500% 500%;
-      animation: backgroundAnimation 4s infinite alternate;
-    }
-    div {
-      transition: transform 0.3s ease-in-out;
-    }
-    div:hover {
-      transform: scale(1.1); 
+      background: linear-gradient(200deg, rgb(103, 103, 103), rgb(42, 66, 106), rgb(135, 204, 244));
+      background-size: 400% 400%;
+      animation: backgroundAnimation 6s infinite alternate;
     }
     @keyframes backgroundAnimation {
       25% {
-        background-position: 100% 100%;
+        background-position: 0 50%;
       }
       50% {
-        background-position: 100% 100%;
+        background-position: 50% 100%;
+      }
+      75% {
+        background-position: 100% 50%;
       }
       100% {
-        background-position: 100% 100%;
+        background-position: 50% 0%;
       }
     }
+    @keyframes flushEffect {
+      0% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(10);
+      }
+      100% {
+        filter: brightness(1);
+      }
+    }
+    .flush {
+      animation: flushEffect 0.5s;
+    }
     .bubble-login {
-      width: 90%;
-      max-width: 400px;
+      width: 85%;
+      max-width: 350px;
       padding: 2rem;
-      background: rgba(4, 172, 250, 0.2);
-      border-radius: 50px;
-      box-shadow: 0 10px 30px rgba(10, 100, 200000, 200000000);
+      background: rgba(255, 255, 254, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
       text-align: center;
-      backdrop-filter: blur(50px);
+      backdrop-filter: blur(10px);
     }
     .bubble-login h1 {
-      font-size: 24px;
+      font-size: 28px;
       margin-bottom: 2rem;
-      color: #fff;
+      color: rgb(24, 116, 145);
+      text-shadow: 1px 1px lightsteelblue;
     }
     .bubble-login input {
       width: 80%;
-      padding: 15px;
+      padding: 12px;
       margin: 0.5rem 0;
-      border: none;
-      border-radius: 50px;
+      border: 2px solid lightsteelblue;
+      border-radius: 20px;
       font-size: 16px;
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      background: white;
       color: #333;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
       outline: none;
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s;
     }
     .bubble-login input::placeholder {
-      color: #666;
+      color: gray;
     }
     .bubble-login input:focus {
       transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 10px rgba(143, 188, 143, 0.5);
     }
     .bubble-login button {
-      padding: 15px 20px;
+      padding: 12px 20px;
       border: none;
-      border-radius: 50px;
+      border-radius: 15px;
       font-size: 16px;
       font-weight: bold;
-      background: linear-gradient(135deg, #ac6898, #253042);
-      color: rgb(236, 164, 164);
+      background: linear-gradient(135deg, rgb(61, 179, 215), lightsteelblue);
+      color: white;
       cursor: pointer;
-      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 10px rgba(72, 61, 139, 0.3);
       transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+      width: 100px;
     }
     .bubble-login button:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 15px rgba(72, 61, 139, 0.5);
     }
     @media (max-width: 600px) {
       .bubble-login {
-        width: 95%;
+        width: 90%;
         padding: 1.5rem;
       }
       .bubble-login input {
@@ -119,7 +130,13 @@
         // Redirect to list.html if the password is correct
         window.location.href = 'list.html';
       } else {
-        alert('Incorrect password. Please try again.');
+        // Trigger flushing animation
+        document.body.classList.add('flush');
+        alert('Incorrect password. Hint: 1234');
+        // Remove the flush class after animation ends
+        setTimeout(() => {
+          document.body.classList.remove('flush');
+        }, 500);
       }
     });
   </script>
