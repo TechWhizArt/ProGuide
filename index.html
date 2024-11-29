@@ -132,12 +132,16 @@
       } else {
         // Trigger flushing animation
         document.body.classList.add('flush');
+        
         alert('Incorrect password. Hint: 1234');
-        // Remove the flush class after animation ends
         setTimeout(() => {
           document.body.classList.remove('flush');
           location.reload();
         }, 500);
+        // Remove the flush class after animation ends
+        
+        
+        
       }
     });
   </script>
