@@ -246,3 +246,112 @@ footer a{
 .note{
     margin:30px;
 }
+
+
+/*  .............................................. project popup.................................................. */
+
+.bodyofpagethree{
+    position: absolute;
+    top: 0; /* Adjust for vertical positioning */
+    width: 100%; /* Adjust cloud size */
+    height: auto;
+    
+    background-size: contain;
+    animation: moveClouds 0.3s linear forwards; /* Controls cloud movement */
+}
+@keyframes moveClouds {
+    from {
+        left: 100%; /* Start off-screen on the right */
+    }
+    to {
+        left: 0; /* Move off-screen on the left */
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Initially hidden */
+}
+#open-popup{
+    margin:10px 0px;
+    background-color:rgb(189, 87, 79);
+    border-radius:5px;
+    border:0px;
+    color:#f1f1f1;
+    width:50px;
+    height:25px;
+}
+
+.popup.active {
+    display: block; /* Display when active */
+}
+
+.popup .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    height:auto;
+    max-height:500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow:auto;
+    overflow-y: scroll;
+
+}
+
+.popup .popup-content h2 {
+    margin-bottom: 15px;
+}
+
+.popup .popup-content p {
+    margin-bottom: 20px;
+}
+
+.popup .popup-content .control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup .popup-content button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup .popup-content .close {
+    background: #d9534f;
+    color: #fff;
+}
+
+.popup .popup-content .close:hover {
+    background: #c9302c;
+}
+
+.popup .popup-content .sendnow {
+    background: #5bc0de;
+    color: #fff;
+}
+
+.popup .popup-content .sendnow:hover {
+    background: #31b0d5;
+}
