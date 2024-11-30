@@ -139,26 +139,6 @@ class MainActivity : ComponentActivity() {
     </footer>
 
      <!-- to copy the text to clipboard -->
-     <script>
-        function copyToClipboard(className) {
-            // Get the non-editable element
-            const textbox = document.getElementsByClassName(className)[0];
-
-            // Create a temporary input element to copy content
-            const tempInput = document.createElement("textarea");
-            tempInput.value = textbox.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the temporary element
-            document.body.removeChild(tempInput);
-
-            alert("Text copied to clipboard!");
-        }
-    </script>
+     <script src="script.js"></script>
 </body>
 </html>

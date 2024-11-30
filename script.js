@@ -1,3 +1,28 @@
+
+// function to copy text for multiple text area ............................................................
+function copyToClipboard(className) {
+    // Get the non-editable element
+    const textbox = document.getElementsByClassName(className)[0];
+
+    // Create a temporary input element to copy content
+    const tempInput = document.createElement("textarea");
+    tempInput.value = textbox.value;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+
+    // Remove the temporary element
+    document.body.removeChild(tempInput);
+
+    alert("Text copied to clipboard!");
+}
+
+
+// popup functionality ...................................................
+
 function createPopup(id) {
     // Select popup and its elements
     let popupNode = document.querySelector(id);
