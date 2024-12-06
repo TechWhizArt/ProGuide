@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(200deg, rgb(58, 4, 4), rgb(118, 6, 6), rgb(0, 0, 0));
+      background-size: 400% 400%;
+      animation: backgroundAnimation 6s infinite alternate;
+    }
+    @keyframes backgroundAnimation {
+      25% {
+        background-position: 0 50%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      75% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 50% 0%;
+      }
+    }
+    @keyframes flushEffect {
+      0% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(10);
+      }
+      100% {
+        filter: brightness(1);
+      }
+    }
+    .flush {
+      animation: flushEffect 0.5s;
+    }
+    .bubble-login {
+      width: 85%;
+      max-width: 350px;
+      padding: 2rem;
+      background: rgba(255, 255, 254, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .bubble-login h1 {
+      font-size: 28px;
+      margin-bottom: 2rem;
+      color: rgb(24, 116, 145);
+      text-shadow: 1px 1px lightsteelblue;
+    }
+    .bubble-login input {
+      width: 80%;
+      padding: 12px;
+      margin: 0.5rem 0;
+      border: 2px solid lightsteelblue;
+      border-radius: 20px;
+      font-size: 16px;
+      background: white;
+      color: #333;
+      outline: none;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    }
+    .bubble-login input::placeholder {
+      color: gray;
+    }
+    .bubble-login input:focus {
+      transform: scale(1.05);
+      box-shadow: 0 5px 10px rgba(143, 188, 143, 0.5);
+    }
+    .bubble-login button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(135deg, rgb(61, 179, 215), lightsteelblue);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(72, 61, 139, 0.3);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+      width: 100px;
+    }
+    .bubble-login button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(72, 61, 139, 0.5);
+    }
+    @media (max-width: 600px) {
+      .bubble-login {
+        width: 90%;
+        padding: 1.5rem;
+      }
+      .bubble-login input {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bubble-login">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="text" placeholder="Username" required id="username">
+      <input type="password" placeholder="Password" required id="password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (password === '1234') {
+        // Redirect to list.html if the password is correct
+        window.location.href = 'list.html';
+      } else {
+        // Trigger flushing animation
+        document.body.classList.add('flush');
+        
+        alert('Incorrect password. Hint: 1234');
+        setTimeout(() => {
+          document.body.classList.remove('flush');
+          location.reload();
+        }, 500);
+        // Remove the flush class after animation ends
+        
+        
+        
+      }
+    });
+  </script>
+</body>
+</html>
