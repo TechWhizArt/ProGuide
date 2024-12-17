@@ -17,12 +17,12 @@
 
         Kotlin is a modern, statically-typed programming language developed by JetBrains, designed for cross-platform development. It's fully interoperable with Java and widely used for Android app development. Known for its concise syntax, safety features, and enhanced productivity, Kotlin supports object-oriented and functional programming paradigms, making it a popular choice among developers.
         <br>
-        <textarea class="samplecode" readonly style="height:150px">
+        <textarea class="samplecode kotlincode" readonly style="height:150px">
 fun main() {
     println("Hello, World!")
 }
 </textarea>
-        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+        <button onclick="copyToClipboard('kotlincode')" class="copybutton">Copy</button>
 
     </div>
     <br>
@@ -109,27 +109,7 @@ fun main() {
     </footer>
 
     <!-- to copy the text to clipboard -->
-    <script>
-        function copyToClipboard() {
-            // Get the non-editable element
-            const textbox = document.getElementsByClassName("samplecode")[0];
-
-            // Create a temporary input element to copy content
-            const tempInput = document.createElement("textarea");
-            tempInput.value = textbox.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the temporary element
-            document.body.removeChild(tempInput);
-
-            alert("Text copied to clipboard!");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 

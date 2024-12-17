@@ -10,6 +10,7 @@
 
 
 <body class = bodyofpagethree>
+   
     <header>
         <h3>ProGuide</h3>
     </header>
@@ -21,7 +22,7 @@
 
         </div>
         <br>
-        <textarea class="samplecode" readonly style="height:260px">
+        <textarea class="samplecode javacode" readonly style="height:260px">
 import java.lang.*;
 
 public class Main{
@@ -30,7 +31,7 @@ public class Main{
     }
 }
 </textarea>
-        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+        <button onclick="copyToClipboard('javacode')" class="copybutton">Copy</button>
 
     </div>
     <br>
@@ -114,26 +115,6 @@ public class Main{
 
 
     <!-- to copy the text to clipboard -->
-    <script>
-        function copyToClipboard() {
-            // Get the non-editable element
-            const textbox = document.getElementsByClassName("samplecode")[0];
-
-            // Create a temporary input element to copy content
-            const tempInput = document.createElement("textarea");
-            tempInput.value = textbox.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the temporary element
-            document.body.removeChild(tempInput);
-
-            alert("Text copied to clipboard!");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

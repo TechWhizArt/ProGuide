@@ -19,7 +19,7 @@
 
         CSS (Cascading Style Sheets) is used to style and layout web pages. It controls the presentation of HTML elements, including colors, fonts, spacing, and positioning, enhancing the visual appeal of websites.
         <br>
-        <textarea class="samplecode" readonly style="height:400px ">
+        <textarea class="samplecode htmlcsscode" readonly style="height:400px ">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +41,7 @@
 </body>
 </html>
 </textarea>
-        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+        <button onclick="copyToClipboard('htmlcsscode')" class="copybutton">Copy</button>
 
     </div>
     <br>
@@ -116,28 +116,9 @@
         <p>We'd love to hear your thoughts!</p>
         <p><a href="mailto:proguide.feedback@gmail.com">Leave us a review</a></p>
     </footer>
-     <!-- to copy the text to clipboard -->
-     <script>
-        function copyToClipboard() {
-            // Get the non-editable element
-            const textbox = document.getElementsByClassName("samplecode")[0];
 
-            // Create a temporary input element to copy content
-            const tempInput = document.createElement("textarea");
-            tempInput.value = textbox.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the temporary element
-            document.body.removeChild(tempInput);
-
-            alert("Text copied to clipboard!");
-        }
-    </script>
+    <!-- to copy the text to clipboard -->
+    <script src="script.js"></script>
 </body>
 </html>
 

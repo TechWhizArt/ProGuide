@@ -16,7 +16,7 @@
     <div class="overviewcontent">
         C is a low-level, procedural programming language focused on performance and system programming. C++ extends C with object-oriented features, supporting classes, inheritance, and polymorphism, useful for complex software development.
         <br>
-        <textarea class="samplecode xml-code" readonly style="height:260px">
+        <textarea class="samplecode ccode" readonly style="height:260px">
 #include <stdio.h>
 
 int main() {
@@ -24,11 +24,11 @@ int main() {
     return 0;
 }
 </textarea>
-        <button onclick="copyToClipboard('xml-code')" class="copybutton">Copy</button>
+        <button onclick="copyToClipboard('ccode')" class="copybutton">Copy</button>
         <br>
         Note: It is recommended to borrow a C language book from the school library and utilize online resources for learning. However, if you still prefer to purchase one, here is a suitable option for you.
         <br>
-        <textarea class="samplecode compose-code" readonly style="height:260px">
+        <textarea class="samplecode cppcode" readonly style="height:260px">
 #include <iostream>
 
 int main() {
@@ -36,7 +36,7 @@ int main() {
     return 0;
 }
 </textarea>
-        <button onclick="copyToClipboard('compose-code')" class="copybutton">Copy</button>
+        <button onclick="copyToClipboard('cppcode')" class="copybutton">Copy</button>
 
     </div>
     <br>
@@ -144,26 +144,6 @@ int main() {
         <p><a href="mailto:proguide.feedback@gmail.com">Leave us a review</a></p>
     </footer>
      <!-- to copy the text to clipboard -->
-     <script>
-        function copyToClipboard(className) {
-            // Get the non-editable element
-            const textbox = document.getElementsByClassName(className)[0];
-
-            // Create a temporary input element to copy content
-            const tempInput = document.createElement("textarea");
-            tempInput.value = textbox.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the temporary element
-            document.body.removeChild(tempInput);
-
-            alert("Text copied to clipboard!");
-        }
-    </script>
+     <script src="script.js"></script>
 </body>
 </html>

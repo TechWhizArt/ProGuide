@@ -17,10 +17,10 @@
 
         JavaScript is a dynamic, high-level programming language used for web development. It enables interactive elements, manipulation of web page content, and supports event-driven, asynchronous, and functional programming paradigms.
         <br>
-        <textarea class="samplecode" readonly style="height:150px">
+        <textarea class="samplecode jscode" readonly style="height:150px">
 console.log("Hello, World!");
 </textarea>
-        <button onclick="copyToClipboard()" class="copybutton">Copy</button>
+        <button onclick="copyToClipboard('jscode')" class="copybutton">Copy</button>
     </div>
     <br>
     <br>
@@ -98,27 +98,8 @@ console.log("Hello, World!");
         <p>We'd love to hear your thoughts!</p>
         <p><a href="mailto:proguide.feedback@gmail.com">Leave us a review</a></p>
     </footer>
-     <!-- to copy the text to clipboard -->
-     <script>
-        function copyToClipboard() {
-            // Get the non-editable element
-            const textbox = document.getElementsByClassName("samplecode")[0];
 
-            // Create a temporary input element to copy content
-            const tempInput = document.createElement("textarea");
-            tempInput.value = textbox.value;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the temporary element
-            document.body.removeChild(tempInput);
-
-            alert("Text copied to clipboard!");
-        }
-    </script>
+    <!-- to copy the text to clipboard -->
+    <script src="script.js"></script>
 </body>
 </html>
