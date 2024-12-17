@@ -22,10 +22,10 @@
     <div class="note">
         Note: If you want your project to be shown here as an example for other students, you can send them to us in the format written in the rules below...
         <div class="center">
-            <button id="open-popup">Rules</button>
+            <button class="open-popup" data-target="#popup1">Rules</button>
         </div>
     
-        <div class="popup" id="popup">
+        <div class="popup" id="popup1">
             <div class="overlay"></div>
             <div class="popup-content">
                 <h2><center>Rules for project submission.</center></h2>
@@ -96,10 +96,16 @@
                     <a href="https://github.com/TechWhizArt/netflix_clone.git">Project Code</a>
                 </td>
                 <td>
-                    Sachin Tendulkar<br>
-                    Student at Miet Meerut<br> 2yr<br>
+                    <button class="open-popup" data-target="#popup2">Info</button>
+                    <div id="popup2" class="popup">
+                        <div class="overlay"></div>
+                        <div class="popup-content">
+                            <div class="popup-formatting">This is a sample text</div>
+                            <button class="close">X</button>
+                            
+                        </div>
+                    </div>
                 </td>
-
             </tr>
             <!-- second project -->
             <tr>

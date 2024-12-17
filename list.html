@@ -21,51 +21,8 @@
         <a href="ccpp.html" class = "box">C, C++</a>
         <a href="kotlin.html" class = "box">Kotlin</a>
         <a href="Projects.html" class = "box">Projects</a>
-
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Select all icons with the class 'box'
-            const icons = document.querySelectorAll('.box');
-
-            // Function to reset the color of the button
-            function resetButtonColor() {
-                icons.forEach(icon => {
-                    icon.style.backgroundColor = 'cadetblue';
-                    icon.style.color = 'white';  // Optional: reset text color to black
-                });
-            }
-
-            // Apply color changes on mousedown, mouseup, touchstart, touchend
-            icons.forEach(icon => {
-                // Add mousedown event to change color on click
-                icon.addEventListener('mousedown', () => {
-                    icon.style.backgroundColor = 'darkcyan'; // Change background color
-                    icon.style.color = 'white'; // Optional: change text color
-                });
-
-                // Add mouseup event to navigate on release
-                icon.addEventListener('mouseup', () => {
-                    icon.style.backgroundColor = 'cadetblue';
-                    window.location.href = icon.href; // Navigate to the linked page
-                });
-
-                // For touch devices, handle touchstart and touchend
-                icon.addEventListener('touchstart', () => {
-                    icon.style.backgroundColor = 'darkcyan'; // Change background color
-                    icon.style.color = 'white'; // Optional: change text color
-                });
-                icon.addEventListener('touchend', () => {
-                    icon.style.backgroundColor = 'cadetblue';
-                    window.location.href = icon.href; // Navigate to the linked page
-                });
-            });
-
-            // Reset button colors when the user navigates back
-            window.addEventListener('pageshow', resetButtonColor);
-            window.addEventListener('focus', resetButtonColor); // Useful for mobile devices
-        });
-    </script>
+    <script type="javascript" src="script.js"></script>
     <footer>
         <p>We'd love to hear your thoughts!</p>
         <p><a href="mailto:proguide.feedback@gmail.com">Leave us a review</a></p>

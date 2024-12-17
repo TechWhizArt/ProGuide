@@ -66,8 +66,6 @@ header {
     .box {
         width: 100%; /* Make boxes full-width on very small screens */
     }
-    
-
 }
 /* ......................................third page general styling.............................................. */
 
@@ -89,6 +87,7 @@ header {
     margin-top:40px;
     background-color: cadetblue;
     color:honeydew;
+    width:100%;
 }
 /* Subheading styling "overview" */
 h4.headings {
@@ -210,7 +209,6 @@ a:hover {
 }
 
 
-
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .threecolumn {
@@ -221,6 +219,71 @@ a:hover {
         margin-bottom: 20px;
     }
     
+    
+}
+
+/* @media (max-width: 480px) {
+    .threecolumn {
+        flex-direction: column;
+    }
+    .material {
+        margin:0px;
+    }
+    .threecolumn{
+        width:100%;
+        margin:px;
+    }
+    footer{
+        width:120%;
+    }
+    .bookinfo{
+        width:100%;
+        margin:0px;
+    }
+    .header{
+        width:120%;
+    }
+    div{
+        width:100%;
+    }
+    
+} */
+@media (max-width: 480px) {
+    .bodyofpagethree {
+        padding:0px;
+        margin:0px;
+    }
+
+    .header {
+        font-size: 1.5em; 
+        height:30px;
+        width:100%;
+    }
+
+    .overviewcontent {
+        font-size: 1em; /* Adjust font size */
+        padding: 10px;
+        margin:20px;
+    }
+    .overviewcontent textarea {
+        font-size: 14px; /* Adjust font size for smaller text areas */
+        padding: 8px;
+    }
+    
+    .threecolumn {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 10px; /* Reduce the gap */
+        margin:10px;
+    }
+
+    table th, td{
+        width:100%;
+        font-size: 12px; /* Smaller font size for better fit */
+    }
+
+    footer {
+        font-size: 0.9em; /* Adjust footer font size */
+    }
 }
 /* Asking for reivew */
 
@@ -250,13 +313,14 @@ footer a{
 
 /*  .............................................. project popup.................................................. */
 
+
 .bodyofpagethree{
-    position: absolute;
+    position:absolute;
     top: 0; /* Adjust for vertical positioning */
     width: 100%; /* Adjust cloud size */
+    margin:0px;
     height: auto;
-    
-    background-size: contain;
+    background-size:cover;
     animation: moveClouds 0.3s linear forwards; /* Controls cloud movement */
 }
 @keyframes moveClouds {
@@ -406,5 +470,43 @@ footer a{
 
     .popupformatting h2 {
         font-size: 1.3em;
+    }
+}
+
+
+/* popup button formatting.... */
+.open-popup {
+    background-color: #d9534f;
+    color: #f1f1f1;
+    width:50px;
+    height:25px;
+    border: none; /* No border */
+    border-radius: 3px; /* Slightly more rounded corners */
+    font-size: auto; /* Scales with the base font size */
+    text-align: center;
+    cursor: pointer; /* Indicates clickable button */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover and focus effects */
+.open-popup:hover,
+.open-popup:focus {
+    background-color: #c9302c; /* Darker red on hover */
+    outline: none; /* Remove focus outline */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .open-popup {
+        font-size:auto; /* Slightly smaller text on smaller screens */
+        padding: 0.4em 0.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .open-popup {
+        font-size: 0.8em; /* Even smaller text for very small screens */
+        padding: 0.3em 0.6em;
+        width: auto; /* Let the width adjust naturally */
     }
 }
