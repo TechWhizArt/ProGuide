@@ -18,6 +18,7 @@ db = client[database_name]  # Access the database
 students_collection = db[collection_name]  # Access the students collection
 
 @app.route('/login', methods=['POST'])
+
 def login():
     data = request.get_json()
     username = data.get('username')

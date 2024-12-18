@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <link rel="stylesheet" type="text/css" href="indexstyling.css" />
-
 </head>
 
 <body id="indexbody">
@@ -19,9 +18,9 @@
       <input type="password" id="password" name="password" required><br><br>
 
       <button type="submit">Login</button>
-  </form>
-
+    </form>
   </div>
+
   <script>
     const form = document.getElementById('loginForm');
 
@@ -31,7 +30,7 @@
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // Send data to the server using Fetch API
+        // Attempt to send data to the server using Fetch API
         fetch('http://127.0.0.1:5000/login', { 
             method: 'POST',
             headers: {
@@ -46,31 +45,27 @@
             return response.json();
         })
         .then(data => {
-            console.log(data); // Handle server response (e.g., success/error message)
-
-
-            // Check if the password is correct from the server response (optional)*************************************************
-        if (password === "1234") {
-            // Redirect to list.html if the password is correct
-            window.location.href = 'list.html';
-        } else {
-            // Trigger flushing animation (page reload effect) if password is incorrect
-            document.body.classList.add('flush');
-            
-            // Show alert and reload the page
-            alert('Incorrect password. Please try again.');
-            setTimeout(() => {
-                document.body.classList.remove('flush');
-                location.reload(); // Flush the page by reloading
-            }, 500);
-          }
+            // Handle server response (optional server logic here)
+            if (password === "1234") {
+                window.location.href = 'list.html'; // Redirect if password matches
+            } else {
+                alert('Incorrect password. Please try again.');
+                location.reload();
+            }
         })
         .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
+            // If server is unavailable, perform local password check
+            console.error('Server is unavailable. Falling back to local password check.');
+
+            if (password === "1234") {
+                alert('Server not reachable, but password is correct. Redirecting...');
+                window.location.href = 'list.html'; // Redirect to the next page
+            } else {
+                alert('Server not reachable, and password is incorrect. Please try again.');
+                location.reload();
+            }
         });
     });
-</script>
-
+  </script>
 </body>
 </html>
-
