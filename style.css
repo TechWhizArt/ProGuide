@@ -395,7 +395,7 @@ footer a{
 }
 
 .popup .popup-content button {
-    padding: 10px 15px;
+    padding: 10px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -509,4 +509,14 @@ footer a{
         padding: 0.3em 0.6em;
         width: auto; /* Let the width adjust naturally */
     }
+}
+
+
+.close{
+    display:flex;
+    justify-self: right;
+    width:50px;
+    height:25px;
+    justify-content: center;
+    padding:3px;
 }
