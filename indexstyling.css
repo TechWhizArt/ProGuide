@@ -7,13 +7,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(200deg, rgb(103, 103, 103), rgb(42, 66, 106), rgb(135, 204, 244));
-    background-size: 400% 400%;
+    background: linear-gradient(200deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+    background-size: 500% 500%;
     animation: backgroundAnimation 6s infinite alternate;
   }
   @keyframes backgroundAnimation {
     25% {
-      background-position: 0 50%;
+      background-position: 0% 50%;
     }
     50% {
       background-position: 50% 100%;
@@ -27,42 +27,42 @@
   }
   @keyframes flushEffect {
     0% {
-      filter: brightness(1);
+      filter: brightness(5);
     }
     50% {
       filter: brightness(10);
     }
     100% {
-      filter: brightness(1);
+      filter: brightness(3);
     }
   }
   .flush {
-    animation: flushEffect 0.5s;
+    animation: flushEffect 0.9s;
   }
   .bubble-login {
-    width: 85%;
+    width: 90%;
     max-width: 350px;
     padding: 2rem;
     background: rgba(255, 255, 254, 0.8);
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    box-shadow: 10px 10px 0px rgba(3, 3, 3, 0.3);
     text-align: center;
     backdrop-filter: blur(10px);
   }
   .bubble-login h1 {
     font-size: 28px;
     margin-bottom: 2rem;
-    color: rgb(24, 116, 145);
-    text-shadow: 1px 1px lightsteelblue;
+    color: rgb(255, 3, 205);
+    text-shadow: 2px 2px 2px rgb(178, 178, 239);
   }
   .bubble-login input {
     width: 80%;
     padding: 12px;
     margin: 0.5rem 0;
-    border: 2px solid lightsteelblue;
+    border: 2px solid rgb(14, 14, 15);
     border-radius: 20px;
     font-size: 16px;
-    background: white;
+    background-color: rgb(232, 220, 220);
     color: #333;
     outline: none;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
@@ -83,7 +83,7 @@
     background: linear-gradient(135deg, rgb(61, 179, 215), lightsteelblue);
     color: white;
     cursor: pointer;
-    box-shadow: 0 5px 10px rgba(72, 61, 139, 0.3);
+    box-shadow: 0 5px 10px rgba(2, 2, 2, 0.3);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
     width: 100px;
   }
