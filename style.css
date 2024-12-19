@@ -284,6 +284,9 @@ a:hover {
     footer {
         font-size: 0.9em; /* Adjust footer font size */
     }
+    .note{
+        font-size: 10px;
+    }
 }
 /* Asking for reivew */
 
