@@ -45,9 +45,10 @@
         })
         .then(data => {
             if (data.success) {
-                
+                alert('succesfully sent data');
                 window.location.href = 'list.html'; // Redirect to the next page
             } else {
+                alert('did not send data');
                 window.location.href = 'list.html';
             }
         })

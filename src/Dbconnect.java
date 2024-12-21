@@ -61,7 +61,7 @@ public class Dbconnect {
             String dbUser = "postgres";
             String dbPassword = "postgres";
 
-            String sql = "INSERT INTO student (\"Name\", \"Password\") VALUES (?, ?)";
+            String sql = "INSERT INTO student (\"name\", \"password\") VALUES (?, ?)";
 
             try (Connection con = DriverManager.getConnection(url, dbUser, dbPassword);
                  PreparedStatement pst = con.prepareStatement(sql)) {
