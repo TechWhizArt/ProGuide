@@ -30,8 +30,7 @@
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // Attempt to send data to the server using Fetch API
-        fetch('http://127.0.0.1:5000/login', { 
+        fetch('http://127.0.0.1:8081/login', { // Java server endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,30 +39,21 @@
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error('Server response not OK');
             }
             return response.json();
         })
         .then(data => {
-            // Handle server response (optional server logic here)
-            if (password === "1234") {
-                window.location.href = 'list.html'; // Redirect if password matches
-            } else {
-                alert('Incorrect password. Please try again.');
-                location.reload();
-            }
-        })
-        .catch(error => {
-            // If server is unavailable, perform local password check
-            console.error('Server is unavailable. Falling back to local password check.');
-
-            if (password === "1234") {
+            if (data.success) {
                 
                 window.location.href = 'list.html'; // Redirect to the next page
             } else {
-                alert('Server not reachable, and password is incorrect. Please try again.');
-                location.reload();
+                window.location.href = 'list.html';
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
         });
     });
   </script>
